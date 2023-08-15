@@ -21,7 +21,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
-        cargarProductos();
+      
     }
 
     /**
@@ -34,14 +34,18 @@ public class Menu extends javax.swing.JFrame {
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmCargarProducto = new javax.swing.JMenuItem();
+        jmEditar = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setMaximumSize(new java.awt.Dimension(1000, 900));
+        setMinimumSize(new java.awt.Dimension(1000, 900));
+        setPreferredSize(new java.awt.Dimension(1000, 900));
         setResizable(false);
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
@@ -56,9 +60,35 @@ public class Menu extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Administracion");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem1.setText("Cargar producto");
-        jMenu1.add(jMenuItem1);
+        jmCargarProducto.setText("Cargar producto");
+        jmCargarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmCargarProductoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmCargarProducto);
+
+        jmEditar.setText("Editar producto");
+        jmEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmEditarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmEditar);
+
+        jMenuItem9.setText("Eliminar producto");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem9);
 
         jMenuBar1.add(jMenu1);
 
@@ -137,6 +167,41 @@ public class Menu extends javax.swing.JFrame {
         escritorio.moveToFront(bpp);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        CargarProducto cp = new CargarProducto();
+        cp.setVisible(true);
+        escritorio.add(cp);
+        escritorio.moveToFront(cp);
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jmCargarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCargarProductoActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        CargarProducto cp = new CargarProducto();
+        cp.setVisible(true);
+        escritorio.add(cp);
+        escritorio.moveToFront(cp);
+    }//GEN-LAST:event_jmCargarProductoActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jmEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmEditarActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        EditarProducto ep = new EditarProducto();
+        ep.setVisible(true);
+        escritorio.add(ep);
+        escritorio.moveToFront(ep);
+        
+    }//GEN-LAST:event_jmEditarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,17 +242,18 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jmCargarProducto;
+    private javax.swing.JMenuItem jmEditar;
     // End of variables declaration//GEN-END:variables
     
-    private void cargarProductos(){
+    public static void cargarProductos(Producto producto){
         
-        listaProductos.add(new Producto(10, "Azucar x 1kg", 700, 5, Categoria.COMESTIBLES));
-        listaProductos.add(new Producto(11, "Azucar x 1/2 kg", 400, 4, Categoria.PERFUMERIA));
-        listaProductos.add(new Producto(12, "Azucar x 1/4 kg", 200, 4, Categoria.LIMPIEZA));
+        listaProductos.add(producto);
+        
     }
     
     
