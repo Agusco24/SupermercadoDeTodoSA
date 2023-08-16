@@ -13,13 +13,14 @@ import javax.swing.table.DefaultTableModel;
  * @author Agustin Colongne
  */
 public class Tabla extends javax.swing.JInternalFrame {
-
+private EditarProducto edit1;
     private DefaultTableModel modelo = new DefaultTableModel();
 
     /**
      * Creates new form Tabla
      */
-    public Tabla() {
+    public Tabla(EditarProducto edit) {
+        this.edit1=edit;
         initComponents();
         armarCabecera();
         datos();
@@ -124,8 +125,8 @@ public class Tabla extends javax.swing.JInternalFrame {
     private void jtListaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtListaProductosMouseClicked
         // TODO add your handling code here:
         int fila = jtListaProductos.getSelectedRow();
-        int codigo = Integer.parseInt(jtListaProductos.getValueAt(fila, 0).toString());
-        EditarProducto.recuperarProducto(codigo);
+        int codigoT = Integer.parseInt(jtListaProductos.getValueAt(fila, 0).toString());
+        this.edit1.recuperardato(codigoT);
         
         this.setVisible(false);
     }//GEN-LAST:event_jtListaProductosMouseClicked

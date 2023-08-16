@@ -20,6 +20,7 @@ public class EditarProducto extends javax.swing.JInternalFrame {
      */
     public EditarProducto() {
         initComponents();
+        cargarCombo();
     }
 
     /**
@@ -274,7 +275,7 @@ public class EditarProducto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         
         escritorio2.repaint();
-        Tabla tabla = new Tabla();
+        Tabla tabla = new Tabla(this);
         tabla.setVisible(true);
         escritorio2.add(tabla);
         escritorio2.moveToFront(tabla);
@@ -301,18 +302,24 @@ public class EditarProducto extends javax.swing.JInternalFrame {
     static void recuperarProducto(int codigoSeleccionado){
         
     }
-    public void recuperar(int codigo){
-        for(Producto producto: Menu.listaProductos){
-            if(producto.getCodigo() == codigo){
-                this.jtCodigo.setText(producto.getCodigo() + "");
-                
-            
-            }
-        
-        }
-        
+     private void cargarCombo(){
+    jcbRubro.addItem(new String ("COMESTIBLES"));
+       jcbRubro.addItem(new String ("LIMPIEZA"));
+       jcbRubro.addItem(new String ("PERFUMERIA"));
     
     }
-
-
+    void recuperardato(int codigo) {
+        for (Producto producto : Menu.listaProductos) {
+           if (producto.getCodigo() == codigo){
+            jtCodigo.setText(producto.getCodigo()+"");
+            jtCodigo.setText(producto.getCodigo()+"");
+            jtDescripcion.setText(producto.getDescripcion());
+            jtPrecio.setText(producto.getPrecio()+"");
+            jtStock.setText(producto.getStock()+"");  
+            jcbRubro.setSelectedItem(producto.getRubro());
+            
+            break;
+           }
+}}
+      
 }
