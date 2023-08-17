@@ -3,16 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/BusquedaPorRubro.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/BusquedaPorNombre.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/BusquedaPorPrecio.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/EliminarProducto.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/Menu.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/EditarProducto.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/Tabla.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/CargarProducto.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/Producto.java</file>
-            <file>file:/C:/Users/Agustin%20Colongne/Documents/NetBeansProjects/SupermercadoDeTodoSA/src/supermercadodetodosa/SupermercadoDeTodoSA.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/BusquedaPorPrecio.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/Tabla.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/CargarProducto.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/EliminarProducto.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/Menu.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/BusquedaPorNombre.java</file>
+            <file>file:/C:/Users/Ezequiel/Documents/GitHub/SupermercadoDeTodoSA/src/supermercadodetodosa/EditarProducto.java</file>
         </group>
     </open-files>
 </project-private>

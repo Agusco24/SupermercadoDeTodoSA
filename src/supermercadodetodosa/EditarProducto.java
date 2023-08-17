@@ -15,12 +15,16 @@ import jdk.nashorn.internal.codegen.CompilerConstants;
  */
 public class EditarProducto extends javax.swing.JInternalFrame {
 
+    private Menu menu;
+
     /**
      * Creates new form EditarProducto
      */
-    public EditarProducto() {
+    public EditarProducto(Menu menu) {
         initComponents();
         cargarCombo();
+        this.menu = menu;
+        
     }
 
     /**
@@ -49,15 +53,19 @@ public class EditarProducto extends javax.swing.JInternalFrame {
         jInternalFrame1 = new javax.swing.JInternalFrame();
 
         setClosable(true);
-        setMaximumSize(new java.awt.Dimension(800, 600));
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMaximumSize(new java.awt.Dimension(500, 486));
+        setMinimumSize(new java.awt.Dimension(500, 486));
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(500, 486));
         try {
             setSelected(true);
         } catch (java.beans.PropertyVetoException e1) {
             e1.printStackTrace();
         }
+
+        escritorio2.setMaximumSize(new java.awt.Dimension(500, 486));
+        escritorio2.setMinimumSize(new java.awt.Dimension(500, 486));
+        escritorio2.setPreferredSize(new java.awt.Dimension(500, 486));
 
         jLabel2.setText("Rubro");
 
@@ -66,6 +74,7 @@ public class EditarProducto extends javax.swing.JInternalFrame {
         jLabel4.setText("Descripcion :");
 
         jtCodigo.setEditable(false);
+        jtCodigo.setVerifyInputWhenFocusTarget(false);
 
         jLabel3.setText("Precio :");
 
@@ -111,59 +120,68 @@ public class EditarProducto extends javax.swing.JInternalFrame {
         escritorio2Layout.setHorizontalGroup(
             escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorio2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jtCodigo)
-                    .addComponent(jcbRubro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtDescripcion)
-                    .addComponent(jtPrecio)
-                    .addComponent(jtStock))
-                .addGap(74, 74, 74)
-                .addComponent(jbBuscar)
-                .addGap(113, 113, 113))
-            .addGroup(escritorio2Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(jbGuardar)
-                .addGap(163, 163, 163)
-                .addComponent(jbCancelar)
-                .addGap(0, 258, Short.MAX_VALUE))
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)))
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)))
+                .addGap(40, 40, 40)
+                .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addComponent(jbGuardar)
+                        .addGap(80, 80, 80)
+                        .addComponent(jbCancelar))
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtStock, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53)
+                        .addComponent(jbBuscar)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         escritorio2Layout.setVerticalGroup(
             escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorio2Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbBuscar))
-                .addGap(26, 26, 26)
+                .addGap(48, 48, 48)
                 .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jcbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addComponent(jbBuscar)
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel4)
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel3)
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel5))
+                    .addGroup(escritorio2Layout.createSequentialGroup()
+                        .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(26, 26, 26)
+                        .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jcbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(30, 30, 30)
+                        .addComponent(jtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
+                        .addComponent(jtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
                 .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                .addGroup(escritorio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbGuardar)
-                    .addComponent(jbCancelar))
-                .addGap(170, 170, 170))
+                    .addComponent(jbCancelar)
+                    .addComponent(jbGuardar))
+                .addGap(48, 48, 48))
         );
 
         jInternalFrame1.setMaximumSize(new java.awt.Dimension(800, 600));
@@ -192,29 +210,42 @@ public class EditarProducto extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
                 .addComponent(escritorio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 256, Short.MAX_VALUE)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 256, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(escritorio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 243, Short.MAX_VALUE)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 243, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        // TODO add your handling code here:
+        if (Menu.listaProductos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay productos cargados");
+        } else {
+            escritorio2.repaint();
+            Tabla tabla = new Tabla(this);
+            tabla.setVisible(true);
+            menu.escritorio.add(tabla);
+            menu.escritorio.moveToFront(tabla);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         if (jtCodigo.getText().isEmpty()) {
@@ -240,24 +271,16 @@ public class EditarProducto extends javax.swing.JInternalFrame {
             jtDescripcion.setText("");
             jtPrecio.setText("");
             jtStock.setText("");
+            jcbRubro.setSelectedItem("");
         }
     }//GEN-LAST:event_jbGuardarActionPerformed
 
-    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-        // TODO add your handling code here:
-
-        escritorio2.repaint();
-        Tabla tabla = new Tabla(this);
-        tabla.setVisible(true);
-        escritorio2.add(tabla);
-        escritorio2.moveToFront(tabla);
-    }//GEN-LAST:event_jbBuscarActionPerformed
-
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-            jtCodigo.setText("");
-            jtDescripcion.setText("");
-            jtPrecio.setText("");
-            jtStock.setText("");
+        jtCodigo.setText("");
+        jtDescripcion.setText("");
+        jtPrecio.setText("");
+        jtStock.setText("");
+        jcbRubro.setSelectedItem("");
     }//GEN-LAST:event_jbCancelarActionPerformed
 
 
@@ -279,10 +302,11 @@ public class EditarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtStock;
     // End of variables declaration//GEN-END:variables
     static void recuperarProducto(int codigoSeleccionado) {
-            
+
     }
 
     private void cargarCombo() {
+        jcbRubro.addItem(new String(""));
         jcbRubro.addItem(new String("COMESTIBLES"));
         jcbRubro.addItem(new String("LIMPIEZA"));
         jcbRubro.addItem(new String("PERFUMERIA"));
@@ -298,12 +322,12 @@ public class EditarProducto extends javax.swing.JInternalFrame {
                 jtPrecio.setText(producto.getPrecio() + "");
                 jtStock.setText(producto.getStock() + "");
                 if ("COMESTIBLES".equalsIgnoreCase(producto.getRubro().toString())) {
-                      jcbRubro.setSelectedItem("COMESTIBLES");
-                    } else if (producto.getRubro().toString().equalsIgnoreCase("LIMPIEZA")){
-                      jcbRubro.setSelectedItem("LIMPIEZA");
-                    } else {
-                        jcbRubro.setSelectedItem("PERFUMERIA");
-                    }
+                    jcbRubro.setSelectedItem("COMESTIBLES");
+                } else if (producto.getRubro().toString().equalsIgnoreCase("LIMPIEZA")) {
+                    jcbRubro.setSelectedItem("LIMPIEZA");
+                } else {
+                    jcbRubro.setSelectedItem("PERFUMERIA");
+                }
 //                jcbRubro.setSelectedItem(producto.getRubro());
 
                 break;

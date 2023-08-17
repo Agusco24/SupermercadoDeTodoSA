@@ -45,22 +45,12 @@ public class BusquedaPorPrecio extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Entre : $");
 
-        jtPrimerPrecio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtPrimerPrecioActionPerformed(evt);
-            }
-        });
         jtPrimerPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtPrimerPrecioKeyReleased(evt);
             }
         });
 
-        jtSegundoPrecio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtSegundoPrecioActionPerformed(evt);
-            }
-        });
         jtSegundoPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtSegundoPrecioKeyReleased(evt);
@@ -161,19 +151,7 @@ public class BusquedaPorPrecio extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_jtSegundoPrecioKeyReleased
 
-    /*
-    private void jtSegundoPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSegundoPrecioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtSegundoPrecioActionPerformed
-
-    private void jtPrimerPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtPrimerPrecioActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_jtPrimerPrecioActionPerformed
-*/
+    /**/
 
     private void jtPrimerPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPrimerPrecioKeyReleased
         // TODO add your handling code here:

@@ -13,12 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class EliminarProducto extends javax.swing.JInternalFrame {
 
+    private Menu menu;
+
     /**
      * Creates new form EliminarProducto
      */
-    public EliminarProducto() {
+    public EliminarProducto(Menu menu) {
         initComponents();
-        cargarCombo();
+        this.menu = menu;
     }
 
     /**
@@ -35,7 +37,6 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
         jbBuscar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jtCodigo = new javax.swing.JTextField();
-        jcbRubro = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jtDescripcion = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -44,9 +45,15 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
         jtStock = new javax.swing.JTextField();
         jbEliminar = new javax.swing.JButton();
         jbCancelar = new javax.swing.JButton();
+        jtRubro = new javax.swing.JTextField();
 
-        escritorio3.setMaximumSize(new java.awt.Dimension(800, 600));
-        escritorio3.setMinimumSize(new java.awt.Dimension(800, 600));
+        setClosable(true);
+        setMaximumSize(new java.awt.Dimension(500, 486));
+        setMinimumSize(new java.awt.Dimension(500, 486));
+        setPreferredSize(new java.awt.Dimension(500, 486));
+
+        escritorio3.setMaximumSize(new java.awt.Dimension(500, 486));
+        escritorio3.setMinimumSize(new java.awt.Dimension(500, 486));
 
         jLabel1.setText("Codigo :");
 
@@ -63,9 +70,15 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Descripcion :");
 
+        jtDescripcion.setEditable(false);
+
         jLabel3.setText("Precio :");
 
+        jtPrecio.setEditable(false);
+
         jLabel5.setText("Stock :");
+
+        jtStock.setEditable(false);
 
         jbEliminar.setText("Eliminar");
         jbEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +98,6 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
         escritorio3.setLayer(jbBuscar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jtCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        escritorio3.setLayer(jcbRubro, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jtDescripcion, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -94,6 +106,7 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
         escritorio3.setLayer(jtStock, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jbEliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         escritorio3.setLayer(jbCancelar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        escritorio3.setLayer(jtRubro, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout escritorio3Layout = new javax.swing.GroupLayout(escritorio3);
         escritorio3.setLayout(escritorio3Layout);
@@ -107,36 +120,36 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(40, 40, 40)
                 .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jtCodigo)
-                    .addComponent(jcbRubro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtDescripcion)
                     .addComponent(jtPrecio)
-                    .addComponent(jtStock))
-                .addGap(74, 74, 74)
+                    .addComponent(jtStock)
+                    .addComponent(jtRubro, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
                 .addComponent(jbBuscar)
-                .addGap(113, 113, 113))
-            .addGroup(escritorio3Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
+                .addGap(41, 41, 41))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, escritorio3Layout.createSequentialGroup()
+                .addGap(119, 119, 119)
                 .addComponent(jbEliminar)
-                .addGap(163, 163, 163)
+                .addGap(80, 80, 80)
                 .addComponent(jbCancelar)
-                .addGap(0, 273, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         escritorio3Layout.setVerticalGroup(
             escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(escritorio3Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addGap(47, 47, 47)
                 .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbBuscar))
-                .addGap(26, 26, 26)
-                .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(22, 22, 22)
+                .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jcbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addComponent(jtRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,38 +161,36 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
                 .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addGroup(escritorio3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbEliminar)
                     .addComponent(jbCancelar))
-                .addGap(170, 170, 170))
+                .addGap(50, 50, 50))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(escritorio3, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(escritorio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(escritorio3, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
-        // TODO add your handling code here:
-
-        escritorio3.repaint();
-        Tabla tabla = new Tabla(this);
-        tabla.setVisible(true);
-        escritorio3.add(tabla);
-        escritorio3.moveToFront(tabla);
-    }//GEN-LAST:event_jbBuscarActionPerformed
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
+        jtCodigo.setText("");
+        jtDescripcion.setText("");
+        jtPrecio.setText("");
+        jtStock.setText("");
+        jtRubro.setText("");
+    }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
         if (jtCodigo.getText().isEmpty()) {
@@ -194,17 +205,27 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
                     jtDescripcion.setText("");
                     jtPrecio.setText("");
                     jtStock.setText("");
+                    jtRubro.setText("");
                     break;
                 }
             }
 
         }
-
     }//GEN-LAST:event_jbEliminarActionPerformed
 
-    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_jbCancelarActionPerformed
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        // TODO add your handling code here:
+        if (Menu.listaProductos.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay productos cargados");
+        } else {
+            escritorio3.repaint();
+            Tabla tabla = new Tabla(this);
+            tabla.setVisible(true);
+            menu.escritorio.add(tabla);
+            menu.escritorio.moveToFront(tabla);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_jbBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -217,18 +238,12 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbCancelar;
     private javax.swing.JButton jbEliminar;
-    private javax.swing.JComboBox<String> jcbRubro;
     private javax.swing.JTextField jtCodigo;
     private javax.swing.JTextField jtDescripcion;
     private javax.swing.JTextField jtPrecio;
+    private javax.swing.JTextField jtRubro;
     private javax.swing.JTextField jtStock;
     // End of variables declaration//GEN-END:variables
-private void cargarCombo() {
-        jcbRubro.addItem(new String("COMESTIBLES"));
-        jcbRubro.addItem(new String("LIMPIEZA"));
-        jcbRubro.addItem(new String("PERFUMERIA"));
-
-    }
 
     void recuperardato(int codigo) {
         for (Producto producto : Menu.listaProductos) {
@@ -239,13 +254,13 @@ private void cargarCombo() {
                 jtPrecio.setText(producto.getPrecio() + "");
                 jtStock.setText(producto.getStock() + "");
                 if ("COMESTIBLES".equalsIgnoreCase(producto.getRubro().toString())) {
-                    jcbRubro.setSelectedItem("COMESTIBLES");
+                    jtRubro.setText("COMESTIBLES");
                 } else if (producto.getRubro().toString().equalsIgnoreCase("LIMPIEZA")) {
-                    jcbRubro.setSelectedItem("LIMPIEZA");
+                    jtRubro.setText("LIMPIEZA");
                 } else {
-                    jcbRubro.setSelectedItem("PERFUMERIA");
+                    jtRubro.setText("PERFUMERIA");
                 }
-//                jcbRubro.setSelectedItem(producto.getRubro());
+//                jtRubro.setSelectedItem(producto.getRubro());
 
                 break;
             }
