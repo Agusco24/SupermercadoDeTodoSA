@@ -47,7 +47,6 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
 
         escritorio3.setMaximumSize(new java.awt.Dimension(800, 600));
         escritorio3.setMinimumSize(new java.awt.Dimension(800, 600));
-        escritorio3.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel1.setText("Codigo :");
 

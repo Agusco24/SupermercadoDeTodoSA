@@ -254,7 +254,10 @@ public class EditarProducto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        this.setVisible(false);
+            jtCodigo.setText("");
+            jtDescripcion.setText("");
+            jtPrecio.setText("");
+            jtStock.setText("");
     }//GEN-LAST:event_jbCancelarActionPerformed
 
 
@@ -276,7 +279,7 @@ public class EditarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jtStock;
     // End of variables declaration//GEN-END:variables
     static void recuperarProducto(int codigoSeleccionado) {
-
+            
     }
 
     private void cargarCombo() {
