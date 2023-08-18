@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercadodetodosa;
+package supermercadodetodosa.vistas;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import jdk.nashorn.internal.codegen.CompilerConstants;
+import supermercadodetodosa.Producto;
 
 /**
  *
@@ -63,7 +64,6 @@ public class EditarProducto extends javax.swing.JInternalFrame {
 
         escritorio2.setMaximumSize(new java.awt.Dimension(500, 486));
         escritorio2.setMinimumSize(new java.awt.Dimension(500, 486));
-        escritorio2.setPreferredSize(new java.awt.Dimension(500, 486));
 
         jLabel2.setText("Rubro");
 
@@ -209,7 +209,7 @@ public class EditarProducto extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(escritorio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 256, Short.MAX_VALUE)

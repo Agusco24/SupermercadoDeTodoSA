@@ -1,7 +1,9 @@
-package supermercadodetodosa;
+package supermercadodetodosa.vistas;
 
 import java.util.TreeSet;
+import javax.swing.JInternalFrame;
 import javax.swing.table.DefaultTableModel;
+import supermercadodetodosa.Producto;
 
 /**
  *
@@ -16,6 +18,8 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
+        this.setVisible(true);
+        
 
     }
 
@@ -36,9 +40,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 700));
         setMinimumSize(new java.awt.Dimension(800, 700));
-        setPreferredSize(new java.awt.Dimension(800, 700));
         setResizable(false);
 
         escritorio.setPreferredSize(new java.awt.Dimension(800, 700));
@@ -134,68 +136,53 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         BusquedaPorNombre bpn = new BusquedaPorNombre();
         bpn.setVisible(true);
-        escritorio.removeAll();
-        escritorio.repaint();
-        escritorio.add(bpn);
-        escritorio.moveToFront(bpn);
+        cargarPanel(bpn);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-    
-        escritorio.removeAll();
-        escritorio.repaint();
+        
+        
         BusquedaPorRubro bpr = new BusquedaPorRubro();
         bpr.setVisible(true);
-        escritorio.add(bpr);
-        escritorio.moveToFront(bpr);
+        cargarPanel(bpr);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
       
-        escritorio.removeAll();
-        escritorio.repaint();
+
         BusquedaPorPrecio bpp = new BusquedaPorPrecio();
         bpp.setVisible(true);
-        escritorio.add(bpp);
-        escritorio.moveToFront(bpp);
+        cargarPanel(bpp);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         
-        escritorio.removeAll();
-        escritorio.repaint();
+
         CargarProducto cp = new CargarProducto();
         cp.setVisible(true);
-        escritorio.add(cp);
-        escritorio.moveToFront(cp);
+        cargarPanel(cp);
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jmCargarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCargarProductoActionPerformed
    
-        escritorio.removeAll();
-        escritorio.repaint();
+  
         CargarProducto cp = new CargarProducto();
         cp.setVisible(true);
-        escritorio.add(cp);
-        escritorio.moveToFront(cp);
+        cargarPanel(cp);
     }//GEN-LAST:event_jmCargarProductoActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
+     
         EliminarProducto elim = new EliminarProducto(this);
         elim.setVisible(true);
-        escritorio.add(elim);
-        escritorio.moveToFront(elim); 
+        cargarPanel(elim);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jmEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmEditarActionPerformed
-        escritorio.removeAll();
-        escritorio.repaint();
+ 
         EditarProducto ep = new EditarProducto(this);
         ep.setVisible(true);
-        escritorio.add(ep);
-        escritorio.moveToFront(ep);
+        cargarPanel(ep);
 
     }//GEN-LAST:event_jmEditarActionPerformed
 
@@ -240,4 +227,13 @@ public class Menu extends javax.swing.JFrame {
     public static void cargarProductos(Producto producto) {
         listaProductos.add(producto);
     }
+    private void cargarPanel(JInternalFrame panel) {
+    escritorio.removeAll();
+    escritorio.repaint();
+    panel.setVisible(true);
+    escritorio.add(panel);
+    escritorio.moveToFront(panel);
+}
+    
+    
 }

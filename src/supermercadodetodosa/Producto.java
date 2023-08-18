@@ -5,6 +5,8 @@
  */
 package supermercadodetodosa;
 
+import supermercadodetodosa.vistas.Categoria;
+
 /**
  *
  * @author Agustin Colongne

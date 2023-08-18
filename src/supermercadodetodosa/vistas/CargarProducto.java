@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercadodetodosa;
+package supermercadodetodosa.vistas;
 
 import javax.swing.JOptionPane;
+import supermercadodetodosa.Producto;
 
 /**
  *

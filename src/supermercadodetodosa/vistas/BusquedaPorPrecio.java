@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercadodetodosa;
+package supermercadodetodosa.vistas;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import supermercadodetodosa.Producto;
 
 /**
  *
@@ -147,21 +148,16 @@ public class BusquedaPorPrecio extends javax.swing.JInternalFrame {
             }
 
         }
-
-
     }//GEN-LAST:event_jtSegundoPrecioKeyReleased
 
-    /**/
 
     private void jtPrimerPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPrimerPrecioKeyReleased
-        // TODO add your handling code here:
+      
         double segudoPrecio = Double.parseDouble(jtSegundoPrecio.getText());
         double primerPrecio;
         if (!jtSegundoPrecio.getText().toString().isEmpty()) {
             primerPrecio = Double.parseDouble(jtPrimerPrecio.getText());
-
         }
-
     }//GEN-LAST:event_jtPrimerPrecioKeyReleased
 
 
@@ -176,22 +172,17 @@ public class BusquedaPorPrecio extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
-
         modelo.addColumn("Codigo");
         modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
         modelo.addColumn("Stock");
         jtListaProductos.setModel(modelo);
-
     }
 
     private void borraFilas() {
-
         int f = jtListaProductos.getRowCount() - 1;
         for (; f >= 0; f--) {
             modelo.removeRow(f);
-
         }
     }
-
 }

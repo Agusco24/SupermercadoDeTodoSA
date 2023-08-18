@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercadodetodosa;
+package supermercadodetodosa.vistas;
 
 import java.util.TreeSet;
 import javax.swing.table.DefaultTableModel;
+import supermercadodetodosa.Producto;
 
 /**
  *

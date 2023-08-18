@@ -3,22 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supermercadodetodosa;
+package supermercadodetodosa.vistas;
 
 import javax.swing.table.DefaultTableModel;
+import supermercadodetodosa.Producto;
 
 /**
  *
  * @author Agustin Colongne
  */
-public class BusquedaPorNombre extends javax.swing.JInternalFrame {
+public class BusquedaPorRubro extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel();
 
     /**
-     * Creates new form BusquedaPorNombre
+     * Creates new form BusquedaPorRubro
      */
-    public BusquedaPorNombre() {
+    public BusquedaPorRubro() {
         initComponents();
         armarCabecera();
     }
@@ -32,20 +33,20 @@ public class BusquedaPorNombre extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jtNombreBuscado = new javax.swing.JTextField();
+        jcbRubro = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtListaProductos = new javax.swing.JTable();
 
         setClosable(true);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Listado por nombre");
+        jLabel1.setText("Listado por rubro");
 
-        jLabel2.setText("Escriba los primeros caracteres");
+        jLabel2.setText("Elija el rubro");
 
-        jtNombreBuscado.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jtNombreBuscadoKeyReleased(evt);
+        jcbRubro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "COMESTIBLES", "LIMPIEZA", "PERFUMERIA" }));
+        jcbRubro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbRubroActionPerformed(evt);
             }
         });
 
@@ -69,39 +70,43 @@ public class BusquedaPorNombre extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(jLabel1))
+                        .addGap(234, 234, 234)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtNombreBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(97, 97, 97)
+                                .addComponent(jcbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtNombreBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                    .addComponent(jcbRubro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtNombreBuscadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtNombreBuscadoKeyReleased
+    private void jcbRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbRubroActionPerformed
         // TODO add your handling code here:
+        
+        String rubroSeleccionado = (String) jcbRubro.getSelectedItem();
         borraFilas();
         for(Producto produc: Menu.listaProductos){
-            if(produc.getDescripcion().startsWith(jtNombreBuscado.getText())){
+            
+            if(produc.getRubro().toString().equalsIgnoreCase(rubroSeleccionado)){
                 
                 modelo.addRow(new Object[]{
                     produc.getCodigo(),
@@ -111,39 +116,33 @@ public class BusquedaPorNombre extends javax.swing.JInternalFrame {
                 });
             
             }
-        
+            
         }
         
-    }//GEN-LAST:event_jtNombreBuscadoKeyReleased
+       
+    }//GEN-LAST:event_jcbRubroActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jcbRubro;
     private javax.swing.JTable jtListaProductos;
-    private javax.swing.JTextField jtNombreBuscado;
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
-
         modelo.addColumn("Codigo");
         modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
         modelo.addColumn("Stock");
         jtListaProductos.setModel(modelo);
-    
-    
     }
     
     private void borraFilas(){
-    
-        
         int f= jtListaProductos.getRowCount() -1;
         for(;f >= 0; f --){
             modelo.removeRow(f);
-        
         }
     }
-
 }
