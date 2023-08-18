@@ -185,11 +185,7 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        jtCodigo.setText("");
-        jtDescripcion.setText("");
-        jtPrecio.setText("");
-        jtStock.setText("");
-        jtRubro.setText("");
+        borrarCampos();
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
@@ -201,11 +197,7 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
                     Menu.listaProductos.remove(producto);
                     JOptionPane.showMessageDialog(this, "Se a eliminado con exito" + jtDescripcion.getText());
 
-                    jtCodigo.setText("");
-                    jtDescripcion.setText("");
-                    jtPrecio.setText("");
-                    jtStock.setText("");
-                    jtRubro.setText("");
+                    borrarCampos();
                     break;
                 }
             }
@@ -266,4 +258,15 @@ public class EliminarProducto extends javax.swing.JInternalFrame {
             }
         }
     }
+    
+    private void borrarCampos(){
+        jtCodigo.setText("");
+        jtDescripcion.setText("");
+        jtPrecio.setText("");
+        jtStock.setText("");
+        jtRubro.setText("");
+    
+    }
+    
+    
 }

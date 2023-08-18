@@ -131,25 +131,17 @@ public class BusquedaPorRubro extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera() {
-
         modelo.addColumn("Codigo");
         modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
         modelo.addColumn("Stock");
         jtListaProductos.setModel(modelo);
-
     }
     
     private void borraFilas(){
-    
-        
         int f= jtListaProductos.getRowCount() -1;
         for(;f >= 0; f --){
             modelo.removeRow(f);
-        
         }
     }
-    
-    
-
 }
